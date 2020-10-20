@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Evolution Dashboard</title>
+
+  <link rel="icon" href="data:;base64,=">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="../tooltipster/dist/css/tooltipster.bundle.min.css" />
+  <link rel="stylesheet"
+    href="../tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/instellingen.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <span>SED</span>
+      </li>
+      <li class="nav-item">
+        <a href="../index.html" class="nav-link">
+          <i class="fas fa-home fa-2x"></i>
+          <span class="link-text">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./mijnPunten.html" class="nav-link">
+          <i class="fas fa-chart-area fa-2x"></i>
+          <span class="link-text">Mijn Punten</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./puntenVergelijken.html" class="nav-link">
+          <i class="fas fa-arrows-alt-h fa-2x"></i>
+          <span class="link-text">Vergelijk</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./forums.html" class="nav-link">
+          <i class="fas fa-comments fa-2x"></i>
+          <span class="link-text">Forums</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./community.html" class="nav-link">
+          <i class="fas fa-user-friends fa-2x"></i>
+          <span class="link-text">Community</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./Profiel.html" class="nav-link">
+          <i class="fas fa-user-circle fa-2x"></i>
+          <span class="link-text">Profiel</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./instellingen.html" class="nav-link">
+          <i class="fas fa-cog fa-2x"></i>
+          <span class="link-text">Instellingen</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div id="topbarID" class="topbar">
+    <ul class="topbar-bar">
+      <li class="topbar-item">
+        <span id="uName" class="topbar-text"></span>
+      </li>
+      <li class="topbar-item">
+        <button id="loginModalButton" class="generalButton">LOGIN</button>
+        <button id="logoutModalButton" class="generalButton hidden">LOGOUT</button>
+      </li>
+    </ul>
+  </div>
+  <main>
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <div class="close">+</div>
+        <label for="email"><b>E-mail Address</b></label>
+        <input id="email" type="text" class="inputForm" placeholder="Enter E-mail" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input id="pass" type="password" class="inputForm" placeholder="Enter Password" name="psw" required>
+
+        <button id="login" type="submit" class="generalButton">LOGIN</button>
+      </div>
+    </div>
+    <div class="container">
+      <h1>Account instellingen</h1>
+      <div class="inst-container">
+        <ul class="inst-list">
+          <li class="inst-item tooltip" data-tooltip-content="#tooltip_anon">
+            <label for="switch-anon" class="inst-label">Anonimiteit</label>
+            <label class="switch switch-anon">
+              <input type="checkbox" id="switch-anon" checked>
+              <span class="slider round"></span>
+            </label>
+          </li>
+          <div class="tooltip-item">
+            <span id="tooltip_anon">
+              <p class="tooltip-text">Je posts op forums zijn anoniem</p>
+            </span>
+          </div>
+          <li class="inst-item tooltip" data-tooltip-content="#tooltip_shareGrades">
+            <label for="switch-shareGrades" class="inst-label">Punten delen</label>
+            <label class="switch switch-shareGrades">
+              <input type="checkbox" id="switch-shareGrades" checked>
+              <span class="slider round"></span>
+            </label>
+          </li>
+          <div class="tooltip-item">
+            <span id="tooltip_shareGrades">
+              <p class="tooltip-text">Je punten worden gedeeld met deze personen</p>
+            </span>
+          </div>
+          <li>
+            <div class="search-container">
+              <div id="btnAddStudent"><i class="fas fa-user-plus"></i></div>
+              <input type="text" placeholder="Voeg een student toe..." name="search" id="addStudent-input"
+                onclick="this.value=''">
+            </div>
+          </li>
+          <li>
+            <ul class="student-list" id="student-list">
+            </ul>
+          </li>
+          <li>
+            <p id="inst-subjectTxt">Vakbekwaamheden:</p>
+            <div class="tooltip-item">
+              <span id="tooltip_subject">
+                <p class="tooltip-text">Op basis van je selecties, kom je terecht in de vakbekwame community
+                  studentenlijst</p>
+              </span>
+            </div>
+            <ul class="subject-list tooltip" data-tooltip-content="#tooltip_subject">
+              <li class="subject-list-item">
+                <input type="checkbox" id="BAD" class="subject-list-checkbox" checked>
+                <label for="BAD" class="subject-name">Advanced Web & Mobile</label>
+              </li>
+              <li class="subject-list-item">
+                <input type="checkbox" id="BAD" class="subject-list-checkbox" checked>
+                <label for="BAD" class="subject-name">Business Application Development</label>
+              </li>
+              <li class="subject-list-item">
+                <input type="checkbox" id="CM" class="subject-list-checkbox">
+                <label for="CM" class="subject-name">Content Management</label>
+              </li>
+              <li class="subject-list-item">
+                <input type="checkbox" id="DI" class="subject-list-checkbox" checked>
+                <label for="DI" class="subject-name">Data Integration</label>
+              </li>
+              <li class="subject-list-item">
+                <input type="checkbox" id="DC" class="subject-list-checkbox">
+                <label for="DC" class="subject-name">Datacenter & Cloud</label>
+              </li>
+              <li class="subject-list-item">
+                <input type="checkbox" id="EN" class="subject-list-checkbox">
+                <label for="EN" class="subject-name">Engels</label>
+              </li>
+              <li class="subject-list-item">
+                <input type="checkbox" id="FR" class="subject-list-checkbox">
+                <label for="FR" class="subject-name">Frans</label>
+              </li>
+              <li class="subject-list-item">
+                <input type="checkbox" id="NL" class="subject-list-checkbox">
+                <label for="EN" class="subject-name">Nederlands</label>
+              </li>
+              <li class="subject-list-item">
+                <input type="checkbox" id="IP" class="subject-list-checkbox">
+                <label for="IP" class="subject-name">Integration Project</label>
+              </li>
+              <li class="subject-list-item">
+                <input type="checkbox" id="IW" class="subject-list-checkbox">
+                <label for="IW" class="subject-name">Internationale Week</label>
+              </li>
+              <li class="subject-list-item">
+                <input type="checkbox" id="MI" class="subject-list-checkbox">
+                <label for="MI" class="subject-name">Marketing & Innovation</label>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/7c12ba35a1.js" crossorigin="anonymous"></script>
+  <script src="/__/firebase/7.14.2/firebase-app.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-auth.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-database.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-storage.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../tooltipster/dist/js/tooltipster.bundle.min.js"></script>
+  <script src="../js/index.js"></script>
+  <script src="../js/instellingen.js"></script>
+  <script>
+    const db = firebase.firestore();
+    function RemoveStudent(doc) {
+      let docID = doc.id;
+      db.collection("STUDENT").doc(docID).delete().then(function () {
+        document.getElementById(docID).parentElement.remove();
+      });
+    }
+  </script>
+</body>
+
+</html>

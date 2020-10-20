@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Evolution Dashboard</title>
+
+  <!-- Stylesheets -->
+  <link rel="icon" href="data:;base64,=">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tooltipster/dist/css/tooltipster.bundle.min.css" />
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/mijnPunten.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <span>SED</span>
+      </li>
+      <li class="nav-item">
+        <a href="../index.html" class="nav-link">
+          <i class="fas fa-home fa-2x"></i>
+          <span class="link-text">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./mijnPunten.html" class="nav-link">
+          <i class="fas fa-chart-area fa-2x"></i>
+          <span class="link-text">Mijn Punten</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./puntenVergelijken.html" class="nav-link">
+          <i class="fas fa-arrows-alt-h fa-2x"></i>
+          <span class="link-text">Vergelijk</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./forums.html" class="nav-link">
+          <i class="fas fa-comments fa-2x"></i>
+          <span class="link-text">Forums</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./community.html" class="nav-link">
+          <i class="fas fa-user-friends fa-2x"></i>
+          <span class="link-text">Community</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./Profiel.html" class="nav-link">
+          <i class="fas fa-user-circle fa-2x"></i>
+          <span class="link-text">Profiel</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./instellingen.html" class="nav-link">
+          <i class="fas fa-cog fa-2x"></i>
+          <span class="link-text">Instellingen</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div id="topbarID" class="topbar">
+    <ul class="topbar-bar">
+      <li class="topbar-item">
+        <span id="uName" class="topbar-text"></span>
+      </li>
+      <li class="topbar-item">
+        <button id="loginModalButton" class="generalButton">LOGIN</button>
+        <button id="logoutModalButton" class="generalButton hidden">LOGOUT</button>
+      </li>
+    </ul>
+  </div>
+  <main>
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <div class="close">+</div>
+        <label for="email"><b>E-mail Address</b></label>
+        <input id="email" type="text" class="inputForm" placeholder="Enter E-mail" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input id="pass" type="password" class="inputForm" placeholder="Enter Password" name="psw" required>
+
+        <button id="login" type="submit" class="generalButton">LOGIN</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="tab-results">
+        <h1 id="test">Mijn Punten</h1>
+        <div class="tabbed skin-midnight-blue round">
+          <ul>
+            <li id="AD">Application Development</li>
+            <li id="AWM">Advanced Web & Mobile</li>
+            <li id="NL">Nederlands</li>
+            <li id="MI" class="active">Marketing & Innovation</li>
+          </ul>
+        </div>
+
+        <!-- used to be "MI-content" -->
+        <div id="MI-tabcontent" class="tabcontent">
+          <h2>Recente resultaten Marketing & Innovation:</h2>
+          <ul class="cards">
+            <li class="card">
+              <h3 id="tabNameMI1"></h3>
+              <p class="student-grade grade-bad" id="tabGradeMI1"></p>
+              <p class="student-grade-total">/ 20</p>
+            </li>
+            <li class="card">
+              <h3 id="tabNameMI2"></h3>
+              <p class="student-grade grade-good" id="tabGradeMI2"></p>
+              <p class="student-grade-total">/ 20</p>
+            </li>
+            <li class="card">
+              <h3 id="tabNameMI3"></h3>
+              <p class="student-grade grade-mediocre" id="tabGradeMI3"></p>
+              <p class="student-grade-total">/ 20</p>
+            </li>
+          </ul>
+        </div>
+
+        <div id="NL-tabcontent" class="tabcontent">
+          <h2>Recente resultaten Nederlands:</h2>
+          <ul class="cards">
+            <li class="card">
+              <h3 id="tabNameNL1"></h3>
+              <p class="student-grade grade-good" id="tabGradeNL1"></p>
+              <p class="student-grade-total">/ 20</p>
+            </li>
+            <li class="card">
+              <h3 id="tabNameNL2"></h3>
+              <p class="student-grade grade-good" id="tabGradeNL2"></p>
+              <p class="student-grade-total">/ 20</p>
+            </li>
+            <li class="card">
+              <h3 id="tabNameNL3"></h3>
+              <p class="student-grade grade-mediocre" id="tabGradeNL3"></p>
+              <p class="student-grade-total">/ 20</p>
+            </li>
+          </ul>
+        </div>
+
+        <div id="AWM-tabcontent" class="tabcontent">
+          <h2>Recente resultaten Advanced Web & Mobile:</h2>
+          <ul class="cards">
+            <li class="card">
+              <h3 id="tabNameAWM1"></h3>
+              <p class="student-grade grade-good" id="tabGradeAWM1"></p>
+              <p class="student-grade-total">/ 20</p>
+            </li>
+            <li class="card">
+              <h3 id="tabNameAWM2"></h3>
+              <p class="student-grade grade-mediocre" id="tabGradeAWM2"></p>
+              <p class="student-grade-total">/ 20</p>
+            </li>
+            <li class="card">
+              <h3 id="tabNameAWM3"></h3>
+              <p class="student-grade grade-bad" id="tabGradeAWM3"></p>
+              <p class="student-grade-total">/ 20</p>
+            </li>
+          </ul>
+        </div>
+
+        <div id="AD-tabcontent" class="tabcontent">
+          <h2>Recente resultaten Application Development:</h2>
+          <ul class="cards">
+            <li class="card">
+              <h3 id="tabNameAD1"></h3>
+              <p class="student-grade grade-mediocre" id="tabGradeAD1"></p>
+              <p class="student-grade-total">/ 20</p>
+            </li>
+            <li class="card">
+              <h3 id="tabNameAD2"></h3>
+              <p class="student-grade grade-good" id="tabGradeAD2"></p>
+              <p class="student-grade-total">/ 20</p>
+            </li>
+            <li class="card">
+              <h3 id="tabNameAD3"></h3>
+              <p class="student-grade grade-good" id="tabGradeAD3"></p>
+              <p class="student-grade-total">/ 20</p>
+            </li>
+            <li class="card">
+              <h3 id="tabNameAD4"></h3>
+              <p class="student-grade grade-bad" id="tabGradeAD4"></p>
+              <p class="student-grade-total">/ 20</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="evolution-results">
+        <h2>Grafische voorstelling resultaten</h2>
+        <div id="MI-graph" class="card-container graphcontent" display="block">
+          <canvas id="myChartMI"></canvas>
+        </div>
+        <div id="NL-graph" class="card-container graphcontent" display="none">
+          <canvas id="myChartNL"></canvas>
+        </div>
+        <div id="AWM-graph" class="card-container graphcontent" display="none">
+          <canvas id="myChartAWM"></canvas>
+        </div>
+        <div id="AD-graph" class="card-container graphcontent" display="none">
+          <canvas id="myChartAD"></canvas>
+        </div>
+      </div>
+
+      <div class="prognosis-results">
+        <h2>Mijn prognose</h2>
+        <div class="card-container">
+          <p>Vul je verwachte punt in. Gelieve enkel numerieke waarden in te geven.</p>
+          <div class="prognosis-table">
+
+            <table class="tablecontent" id="MI-prognosis-table">
+              <tr>
+                <th>Naam tentamen</th>
+                <th>Verwachte punt</th>
+                <th>Eigenlijke punt</th>
+              </tr>
+              <tr>
+                <td><label for="MI-inpOpdracht1" id="prognosisNameMI1"></label></td>
+                <td>
+                  <input type="text" class="prognosis-input" id="MI-inpOpdracht1" value="10" disabled>
+                </td>
+                <td class="grade-bad" id="prognosisGradeMI1"></td>
+              </tr>
+              <tr>
+                <td><label for="MI-inpOpdracht2" id="prognosisNameMI2"></label></td>
+                <td>
+                  <input type="text" class="prognosis-input" id="MI-inpOpdracht2" value="13" disabled>
+                </td>
+                <td class="grade-good" id="prognosisGradeMI2"></td>
+              </tr>
+              <tr>
+                <td><label for="MI-inpOpdracht3" id="prognosisNameMI3"></label></td>
+                <td>
+                  <input type="text" class="prognosis-input" id="MI-inpOpdracht3">
+                </td>
+                <!-- <td class="grade-mediocre" id="prognosisGradeMI3"></td> -->
+                <td id="prognosisGradeMI3">/</td>
+              </tr>
+            </table>
+
+            <table class="tablecontent" id="NL-prognosis-table">
+              <tr>
+                <th>Naam tentamen</th>
+                <th>Verwachte punt</th>
+                <th>Eigenlijke punt</th>
+              </tr>
+              <tr>
+                <td><label for="NL-inpOpdracht1" id="prognosisNameNL1"></label></td>
+                <td>
+                  <input type="text" class="prognosis-input" value="12" id="NL-inpOpdracht1" disabled>
+                </td>
+                <td class="grade-good" id="prognosisGradeNL1"></td>
+              </tr>
+              <tr>
+                <td><label for="NL-inpOpdracht2" id="prognosisNameNL2"></label></td>
+                <td>
+                  <input type="text" class="prognosis-input" value="13" id="NL-inpOpdracht2" disabled>
+                </td>
+                <td class="grade-good" id="prognosisGradeNL2"></td>
+              </tr>
+              <tr>
+                <td><label for="NL-inpOpdracht3" id="prognosisNameNL3"></label></td>
+                <td>
+                  <input type="text" class="prognosis-input" id="NL-inpOpdracht3">
+                </td>
+                <!-- <td class="grade-mediocre" id="prognosisGradeNL3"></td> -->
+                <td id="prognosisGradeNL3">/</td>
+              </tr>
+            </table>
+
+            <table class="tablecontent" id="AWM-prognosis-table">
+              <tr>
+                <th>Naam tentamen</th>
+                <th>Verwachte punt</th>
+                <th>Eigenlijke punt</th>
+              </tr>
+              <tr>
+                <td><label for="AWM-inpOpdracht1" id="prognosisNameAWM1"></label></td>
+                <td>
+                  <input type="text" class="prognosis-input" id="AWM-inpOpdracht1" value="17" disabled>
+                </td>
+                <td class="grade-good" id="prognosisGradeAWM1"></td>
+              </tr>
+              <tr>
+                <td><label for="AWM-inpOpdracht2" id="prognosisNameAWM2"></label></td>
+                <td>
+                  <input type="text" class="prognosis-input" id="AWM-inpOpdracht2" value="12" disabled>
+                </td>
+                <td class="grade-mediocre" id="prognosisGradeAWM2"></td>
+              </tr>
+              <tr>
+                <td><label for="AWM-inpOpdracht3" id="prognosisNameAWM3"></label></td>
+                <td>
+                  <input type="text" class="prognosis-input" id="AWM-inpOpdracht3">
+                </td>
+                <!-- <td class="grade-bad" id="prognosisGradeAWM3"></td> -->
+                <td id="prognosisGradeAWM3">/</td>
+              </tr>
+            </table>
+
+            <table class="tablecontent" id="AD-prognosis-table">
+              <tr>
+                <th>Naam tentamen</th>
+                <th>Verwachte punt</th>
+                <th>Eigenlijke punt</th>
+              </tr>
+              <tr>
+                <td><label for="AD-inpOpdracht1" id="prognosisNameAD1"></label></td>
+                <td>
+                  <input type="text" class="prognosis-input" id="AD-inpOpdracht1" value="10" disabled>
+                </td>
+                <td class="grade-mediocre" id="prognosisGradeAD1"></td>
+              </tr>
+              <tr>
+                <td><label for="AD-inpOpdracht2" id="prognosisNameAD2"></label></td>
+                <td>
+                  <input type="text" class="prognosis-input" id="AD-inpOpdracht2" value="14" disabled>
+                </td>
+                <td class="grade-good" id="prognosisGradeAD2"></td>
+              </tr>
+              <tr>
+                <td><label for="AD-inpOpdracht3" id="prognosisNameAD3"></label></td>
+                <td>
+                  <input type="text" class="prognosis-input" id="AD-inpOpdracht3">
+                </td>
+                <!-- <td class="grade-good" id="prognosisGradeAD3"></td> -->
+                <td id="prognosisGradeAD3">/</td>
+              </tr>
+              <tr>
+                <td><label for="AD-inpOpdracht4" id="prognosisNameAD4"></label></td>
+                <td>
+                  <input type="text" class="prognosis-input" id="AD-inpOpdracht4">
+                </td>
+                <!-- <td class="grade-bad" id="prognosisGradeAD4"></td> -->
+                <td id="prognosisGradeAD4">/</td>
+              </tr>
+            </table>
+
+          </div>
+          <div class="prognosis-chart">
+            <div id="MI-prognosis-chart" class="prognosisChartContent" display="block">
+              <canvas id="myPrognosisChartMI"></canvas>
+            </div>
+            <div id="NL-prognosis-chart" class="prognosisChartContent" display="none">
+              <canvas id="myPrognosisChartNL"></canvas>
+            </div>
+            <div id="AWM-prognosis-chart" class="prognosisChartContent" display="none">
+              <canvas id="myPrognosisChartAWM"></canvas>
+            </div>
+            <div id="AD-prognosis-chart" class="prognosisChartContent" display="none">
+              <canvas id="myPrognosisChartAD"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="successRate-results">
+        <h2>Slaagkansen vak vorig jaar</h2>
+        <div class="card-container">
+
+          <ul class="cards successcontent" id="MI-successContent">
+            <li class="card">
+              <h3>Eerste zittijd</h3>
+              <p class="subject-successRate grade-good" id="eersteZitPctMI"></p>
+            </li>
+            <li class="card">
+              <h3>Tweede zittijd</h3>
+              <p class="subject-successRate grade-bad" id="tweedeZitPctMI"></p>
+            </li>
+          </ul>
+
+          <ul class="cards successcontent" id="NL-successContent">
+            <li class="card">
+              <h3>Eerste zittijd</h3>
+              <p class="subject-successRate grade-good" id="eersteZitPctNL"></p>
+            </li>
+            <li class="card">
+              <h3>Tweede zittijd</h3>
+              <p class="subject-successRate grade-mediocre" id="tweedeZitPctNL"></p>
+            </li>
+          </ul>
+
+          <ul class="cards successcontent" id="AWM-successContent">
+            <li class="card">
+              <h3>Eerste zittijd</h3>
+              <p class="subject-successRate grade-mediocre" id="eersteZitPctAWM"></p>
+            </li>
+            <li class="card">
+              <h3>Tweede zittijd</h3>
+              <p class="subject-successRate grade-good" id="tweedeZitPctAWM"></p>
+            </li>
+          </ul>
+
+          <ul class="cards successcontent" id="AD-successContent">
+            <li class="card">
+              <h3>Eerste zittijd</h3>
+              <p class="subject-successRate grade-bad" id="eersteZitPctAD"></p>
+            </li>
+            <li class="card">
+              <h3>Tweede zittijd</h3>
+              <p class="subject-successRate grade-good" id="tweedeZitPctAD"></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/7c12ba35a1.js" crossorigin="anonymous"></script>
+  <script src="/__/firebase/7.14.2/firebase-app.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-auth.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-database.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-storage.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script src="../tooltipster/dist/js/tooltipster.bundle.min.js"></script>
+  <script src="../js/mijnPunten.js"></script>
+  <script src="../js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Evolution Dashboard</title>
+  
+  <link rel="icon" href="data:;base64,=">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/forums.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <span>SED</span>
+      </li>
+      <li class="nav-item">
+        <a href="../index.html" class="nav-link">
+          <i class="fas fa-home fa-2x"></i>
+          <span class="link-text">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./mijnPunten.html" class="nav-link">
+          <i class="fas fa-chart-area fa-2x"></i>
+          <span class="link-text">Mijn Punten</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./puntenVergelijken.html" class="nav-link">
+          <i class="fas fa-arrows-alt-h fa-2x"></i>
+          <span class="link-text">Vergelijk</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./forums.html" class="nav-link">
+          <i class="fas fa-comments fa-2x"></i>
+          <span class="link-text">Forums</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./community.html" class="nav-link">
+          <i class="fas fa-user-friends fa-2x"></i>
+          <span class="link-text">Community</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./Profiel.html" class="nav-link">
+          <i class="fas fa-user-circle fa-2x"></i>
+          <span class="link-text">Profiel</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./instellingen.html" class="nav-link">
+          <i class="fas fa-cog fa-2x"></i>
+          <span class="link-text">Instellingen</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div id="topbarID" class="topbar">
+    <ul class="topbar-bar">
+      <li class="topbar-item">
+        <span id="uName" class="topbar-text"></span>
+      </li>
+      <li class="topbar-item">
+        <button id="loginModalButton" class="generalButton">LOGIN</button>
+        <button id="logoutModalButton" class="generalButton hidden">LOGOUT</button>
+      </li>
+    </ul>
+  </div>
+
+  <main>
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <div class="close">+</div>
+        <label for="email"><b>E-mail Address</b></label>
+        <input id="email" type="text" class="inputForm" placeholder="Enter E-mail" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input id="pass" type="password" class="inputForm" placeholder="Enter Password" name="psw" required>
+
+        <button id="login" type="submit" class="generalButton">LOGIN</button>
+      </div>
+    </div>
+
+
+    <div class="container2">
+      <div class="pagebar">
+        <ul class="pagebar-nav">
+          <li class="title">
+            <span>- Vakken -</span>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">Business Application Dev.</span>
+            </a>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">Content Management</span>
+            </a>
+          </li>
+          <li class="nav-item2">
+            <a href="./forumsDataIntegration.html" class="nav-link2">
+              <span class="link-text">Data Integration</span>
+            </a>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">Datacenter & Cloud</span>
+            </a>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">English</span>
+            </a>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">French</span>
+            </a>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">Dutch</span>
+            </a>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">Integration Project</span>
+            </a>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">Internationale Week</span>
+            </a>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">Marketing & Innovation</span>
+            </a>
+          </li><br>
+          <li class="title">
+            <span>- Andere Pagina's -</span>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">Algemeen</span>
+            </a>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">Buitenschoolse Projecten</span>
+            </a>
+          </li><br>
+          <li class="title">
+            <span>- Mijn Pagina's -</span>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">Mijn Posts</span>
+            </a>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">Mijn Reacties</span>
+            </a>
+          </li>
+          <li class="nav-item2">
+            <a href="#" class="nav-link2">
+              <span class="link-text">Opgeslagen Posts</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="posts container">
+
+      <ul class="">
+        <button id="subforum" class="dropbtn">Feed</button>
+
+
+      <div class="dropdown">
+        <button id="sort" class="dropbtn">Sorteren op</button>
+        <div class="dropdown-content">
+          <a href="#" id="relevantie">Relevantie</a>
+          <a href="#" id="nieuwste">Nieuwste</a>
+          <a href="#" id="oudste">Oudste</a>
+          <a href="#" id="likes">Meeste Likes</a>
+          <a href="#" id="reacties">Meeste Reacties</a>
+          <a href="#" id="nuPopulair">Nu populair</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button id="filter" class="dropbtn">Filter</button>
+        <div class="dropdown-content">
+          <a class= "hidden" href="#" id="geenFilter">Geen filter</a>
+          <a href="#" id="vraag">Vragen</a>
+          <a href="#" id="idee">Ideeën</a>
+          <a href="#" id="poll">Polls</a>
+          <a href="#" id="mededeling">Mededelingen</a>
+          <a href="#" id="samenvatting">Samenvattingen</a>
+          <a href="#" id="andere">Andere</a>
+        </div>
+      </div>
+      <button id="showCreatePostBtn" class="dropbtn" style="display: none;">Maak een post aan</button>
+      <button id="showAnnuleerBtn" class="dropbtn">Annuleer</button>
+      </ul>
+      <hr>
+
+      <button id="submitBtn" type="submit" class="dropbtn" style="display: none;">Post</button>
+      <div id="showCreatePost" class="hidden" style="display: none;"></div>
+
+      <div class="viewPosts">
+        <h1 id="test">Posts </h1>
+        <h4>[Gesorteerd op '<i id="gesorteerdOp">Nieuwste</i> ' en gefilterd op '<i id="gefilterdOp" >Vragen</i> ']</h4>
+        <div class="postBlock" id="vraag1">
+          <div class="upperPart">
+            <img src="../images/profielfoto4.png" alt="like" class="">
+            <div class="name&timeContainer">
+              <h4>Tom Peeters -> Data Integration</h4>
+              <small>&#160;2u geleden</small>
+            </div>
+            <div class="upperPartEnd">
+            <button id="tagShower" class="dropbtn">Vraag</button>
+            <button id="opgelost" class="dropbtn">&#10003; Opgelost &#10003;</button>
+            <div class="dropdown">
+              <button id="filter" class="dropbtn">&#62;&#62;</button>
+              <div class="dropdown-content">
+                <a href="#">Toon meer</a>
+                <a href="#">Kopieer Link</a>
+                <a href="#">Opslaan</a>
+                <a href="#">Rapporteer</a>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="txtPost">
+            <p>
+              Is er iemand al begonnen aan die ETL oefeningen?
+            </p>
+            <p>
+              Ik zit aan oefening 12, maar bij het runnen van de job krijg ik een E564GR7-error...
+            </p>
+            <p>
+              Als iemand mij hiermee kan helpen, zou ik hem/haar heel dankbaar zijn!
+            </p>
+            <p>
+              De oefening zit als bijlage aan deze post.
+            </p>
+          </div>
+          <button id="attachmentBtn" class="dropbtn">Oefening-12.tld</button>
+          
+          <button id="reactionsBtn" class="dropbtn">5 Likes & 2 Reacties</button>
+          <img src="../images/like.png" alt="like" id="img3"> 
+        </div>
+        <div class="postBlock" id="samenvatting1">
+          <div class="upperPart">
+            <img src="../images/profielfoto7.png" alt="like" class="">
+            <div class="name&timeContainer">
+              <h4>Jessy Brown -> Datacenter & Cloud</h4>
+              <small>&#160;5u geleden</small>
+              </div>
+              <div class="upperPartEnd">
+                <button id="tagShower" class="dropbtn">Samenvatting</button>
+                <div class="dropdown">
+                  <button id="filter" class="dropbtn">&#62;&#62;</button>
+                  <div class="dropdown-content">
+                    <a href="#">Toon meer</a>
+                    <a href="#">Kopieer Link</a>
+                    <a href="#">Opslaan</a>
+                    <a href="#">Rapporteer</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="txtPost">
+              <p>
+                Ik heb een samenvatting gemaakt van hoofdstuk 6.
+              </p>
+              <p>
+                Enjoy!
+              </p>
+            </div>
+            <button id="attachmentBtn" class="dropbtn">Samenvatting-h6.pdf</button>
+
+            <button id="reactionsBtn" class="dropbtn">11 Likes & 4 Reacties</button>
+            <img src="../images/like.png" alt="like" id="img3">
+          </div>
+        </div>
+
+        <div id="noPosts"></div>
+
+    </div>
+  </main>
+  <br><br><br><br>
+  <script src="https://kit.fontawesome.com/7c12ba35a1.js" crossorigin="anonymous"></script>
+  <script src="/__/firebase/7.14.2/firebase-app.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-auth.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-database.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-storage.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="../js/index.js"></script>
+  <script src="../js/forums.js"></script>
+</body>
+
+</html>

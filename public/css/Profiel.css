@@ -1,0 +1,485 @@
+/**
+ * Stylesheet voor Profielpaging SED
+ *
+ * @author Mattias Van Schelvergem & Aïcha Mokhtar
+ *
+valideer je css op deze super site -> http://jigsaw.w3.org/css-validator/
+*/
+
+
+
+/* ============= ALGEMEEN =============== */
+
+.div_Een, .div_Drie, .div_Vijf, .wijzig_Profiel_Inhoud {
+    background-color: #e4e4e4;
+}
+
+.div_Een, .div_Twee, .div_Drie, .div_Vier, .div_Vijf, .wijzig_Profiel_Inhoud {
+    padding: 1rem 2rem;
+}
+
+
+/* ============= DIV_EEN =============== */
+ 
+.div_Een button {
+    float: right;
+}
+
+.div_Een {
+    height: 385px;
+}
+
+.div_Een p, .div_Een span, .div_Een i {
+    color: #5c5ccc;
+}
+
+.div_EenInhoud_links {
+    padding: 1em;
+    border-style: solid;
+    border-radius: 1em;
+    border-color: #5c5ccc;
+    display: block;
+    background-color: whitesmoke;
+}
+
+.div_EenInhoud_links p {
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+.div_EenInhoud_links img {
+    margin-bottom: 0.5em;
+}
+
+/* Profielfoto */
+.profiel_foto{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#button_kiesfoto { 
+    background-color: #5c5ccc;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    transition-duration: 0.4s;
+}
+
+.hidden { 
+    display: none; 
+}
+
+.div_EenInhoud{
+    height: 250px;
+    margin-top: 2em;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.div_EenInhoud_midden {
+    padding: 1em;
+    border-style: solid;
+    border-radius: 1em;
+    border-color: #5c5ccc;
+    width: 40%;
+    background-color: whitesmoke;
+}
+
+.div_EenInhoud_midden label, .div_EenInhoud_rechts label {
+    font-weight: bold;
+    color: #5c5ccc;
+}
+
+.div_EenInhoud_midden p {
+    padding-top: 0.75em;
+}
+
+.div_EenInhoud_midden p {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+#GekozenIndividu {
+    height: 125px;
+    width: 40%;
+}
+
+.div_inh_mid_karakterProf {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 2rem;
+    -webkit-flex-flow: row wrap;
+}
+
+.div_EenInhoud_rechts {
+    padding: 1em;
+    border-style: solid;
+    border-radius: 1em;
+    border-color: #5c5ccc;
+    background-color: whitesmoke;
+    width: 15%;
+}
+
+.div_EenInhoud_rechts p {
+    margin-top: 0.35em;
+    margin-bottom: 0em;
+    text-align: center;
+    font-size: 5em;
+}
+
+
+
+
+
+/* ============= DIV_Wijzig_Profiel =============== */
+
+.wijzig_Profiel_Inhoud {
+    height: 640px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+}
+
+form {
+    width: 90%;
+    align-items: left;
+}
+
+form p {
+    margin-bottom: 0em;
+}
+
+#vnaam, #fnaam, #e-mail, #nummer, #gebruikersnaam, #github, #website {
+    display: block;
+    border-radius: 0.6rem;
+    background-color: white;
+    border: none;
+    width: 70%;
+    height: 1.5rem;
+    margin-left: 0px;
+}
+
+.radioBtn {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+}
+
+.radioBtn1, .radioBtn2 {
+    display:inline-block;
+}
+
+#sluitenWijzigProfielDiv {
+    margin-top: 1.5em;
+}
+
+#button_kiesfoto, #sluitenWijzigProfielDiv {
+    margin-left: 0em;
+    width: 20%;
+}
+
+#AnuleerWijzigProfielDiv {
+    margin-left: 3em;
+}
+
+
+
+
+
+
+
+
+
+/* ============= DIV_TWEE =============== */
+ 
+.div2Top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#Badgefilter {
+    height: 1.5em;
+    margin-top: 2em;
+    margin-left: 65%;
+}
+
+.grid_box img{
+    width: 150px;
+    height: 150px;
+    display:block;
+    margin:auto;
+}
+
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+.picture_grid{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 2rem;
+    -webkit-flex-flow: row wrap;
+}
+
+.grid_box{
+    padding: 0px;
+    width: 200px;
+    height: 200px;
+    margin-top: 5px;
+    /*tooltip*/ 
+    position: relative;
+    display: inline-block;
+}
+
+.picture_grid p{
+    text-align: center;
+    margin-top: 0em;
+}
+
+.grid_box .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 0px 0;
+    position: relative;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .grid_box .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 32%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  }
+  
+  .grid_box:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  #nogniet1, #nogniet2, #nogniet3, #nogniet4 {
+      opacity: 0.1;
+  }
+
+
+
+
+
+/* ============= DIV_DRIE =============== */
+
+/*
+.grid-container { 
+    display: grid; 
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-column-gap: 3rem;
+    align-items: center; 
+    margin-top: 3em;
+}
+*/
+
+.grid-sterktes {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    -webkit-column-gap: 5px;
+    column-gap: 5px;
+    grid-row-gap: 5px;
+    background-color: #e8e8e8;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0 24px 8px rgba(0,0,0,.08);
+}
+
+.grid-sterktes a, .grid-teamrollen a {
+    color:  grey;
+    text-decoration: none;
+}
+
+
+.sterkte, .teamroltype {
+  width: 150px;
+  height: 128px;
+  max-height: 128px;
+  border: 1px solid #f1f1f1;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  justify-content: center;
+}
+
+.teamroltype.match {
+	background-color: yellow;
+}
+
+.flip-card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.flip-card-front img {
+    width: 40px;
+    height: 50px;
+}
+
+.flip-card-front p {
+   margin: 0;
+   font-size: 0.5rem;
+}
+
+.flip-card-front p:first-of-type {
+    font-weight: bold;
+    padding: 0.3rem 0rem;
+}
+
+#jeUniekeTeamRol, #jeKarakterSterktes {
+ 
+    width:unset;
+    display: flex;
+    height: 200px; 
+    background-color: white;
+    width: 35%;
+    border: 1px solid; 
+    overflow-y: auto; 
+    padding: 10px; 
+    margin: 0rem 0rem 2rem 0rem;
+    
+}
+
+.sterkte:hover {
+    background: rgb(92, 92, 204);
+}
+
+.grid-teamrollen {
+    display: inline-grid;
+    grid-template-columns: repeat(3,1fr);
+    -webkit-column-gap: 5px;
+    column-gap: 5px;
+    grid-row-gap: 5px;
+    background-color: #e8e8e8;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0 24px 8px rgba(0,0,0,.08);
+    margin-bottom: 2rem;
+}
+
+#teamrollen .flip-card-front img {
+    width: 100px;
+    height: 100px;
+}
+
+
+#teamrollen .teamroltype {
+    padding: 30px;
+}
+
+
+.div_Drie button, .div_Vier button {
+    font-size: 1rem;
+}
+
+#jeUniekeTeamRol{
+    height: unset;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============= DIV_VIER =============== */
+
+/*
+.grid-teamrollen :active {
+    border-style: solid;
+    border-radius: 1em;
+    border-color: #5c5ccc;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============= Code Aïcha 1e versie (zelf opkuisen)=============== */
+.container {
+  padding-left: 3rem;
+}
+
+
+.grid { 
+    display: grid; 
+    grid-template-columns: calc(50% - 70px) calc(30% - 70px);
+    grid-column-gap: 3rem;
+    align-items: center; 
+    margin-top: 3em;
+}
+
+
+h2 {
+    color: #5c5ccc;
+}
+
+
+button { 
+    background-color: #5c5ccc;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color:white ; 
+    color: #5c5ccc;
+    border-color: #5c5ccc;
+}
+
+
+
+/* ============= RESPONSIVE =============== */
+
+@media only screen and (max-width: 500px) {
+
+    .body {
+        font-size: 0.6rem;
+    }
+}

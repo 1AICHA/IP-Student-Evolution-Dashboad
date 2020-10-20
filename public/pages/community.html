@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Evolution Dashboard</title>
+
+  <link rel="icon" href="data:;base64,=">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/community.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <span>SED</span>
+      </li>
+      <li class="nav-item">
+        <a href="../index.html" class="nav-link">
+          <i class="fas fa-home fa-2x"></i>
+          <span class="link-text">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./mijnPunten.html" class="nav-link">
+          <i class="fas fa-chart-area fa-2x"></i>
+          <span class="link-text">Mijn Punten</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./puntenVergelijken.html" class="nav-link">
+          <i class="fas fa-arrows-alt-h fa-2x"></i>
+          <span class="link-text">Vergelijk</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./forums.html" class="nav-link">
+          <i class="fas fa-comments fa-2x"></i>
+          <span class="link-text">Forums</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./community.html" class="nav-link">
+          <i class="fas fa-user-friends fa-2x"></i>
+          <span class="link-text">Community</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./Profiel.html" class="nav-link">
+          <i class="fas fa-user-circle fa-2x"></i>
+          <span class="link-text">Profiel</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./instellingen.html" class="nav-link">
+          <i class="fas fa-cog fa-2x"></i>
+          <span class="link-text">Instellingen</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div id="topbarID" class="topbar">
+    <ul class="topbar-bar">
+      <li class="topbar-item">
+        <span id="uName" class="topbar-text"></span>
+      </li>
+      <li class="topbar-item">
+        <button id="loginModalButton" class="generalButton">LOGIN</button>
+        <button id="logoutModalButton" class="generalButton hidden">LOGOUT</button>
+      </li>
+    </ul>
+  </div>
+  <main>
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <div class="close">+</div>
+        <label for="email"><b>E-mail Address</b></label>
+        <input id="email" type="text" class="inputForm" placeholder="Enter E-mail" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input id="pass" type="password" class="inputForm" placeholder="Enter Password" name="psw" required>
+
+        <button id="login" type="submit" class="generalButton">LOGIN</button>
+      </div>
+    </div>
+    <div class="container">
+      <h1 id="test">Odisee Community</h1>
+      <h2>Mijn medestudenten</h2>
+      <select name="groepsfilter" id="groepsfilter">
+        <option value="ongefilterd">Ongefilterde groepen</option>
+        <option value="groep1-2">1ste Bachelor / Groep 1-2</option>
+        <option value="groep3-4">1ste Bachelor / Groep 3-4</option>
+        <option value="groep5-6">1ste Bachelor / Groep 5-6</option>
+        <option value="groep5-6">2de Bachelor / Groep 1</option>
+        <option value="groep5-6">2de Bachelor / Groep 2</option>
+      </select> 
+
+      <select name="groepsfilter" id="groepsfilter">
+        <option value="ongefilterd">Ongefilterde 'vak'-badges</option>
+        <option value="Web Development">Goed in Web Development</option>
+        <option value="Database Development">Goed in Database Development</option>
+        <option value="Application Development">Goed in Application Development</option> 
+        <option value="Network Development">Goed in Network Development</option>
+        <option value="Marketing & Innovation">Goed in Marketing & Innovation</option>
+        <option value="System Management">Goed in System Management</option>
+        <option value="Content Management">Goed in Content Management</option>
+        <option value="Usability & Interaction Design">Goed in Usability & Interaction Design</option>
+        <option value="Datavisualisation & Analysis">Goed in Datavisualisation & Analysis</option>
+        <option value="Linux & Windows Server">Goed in Linux & Windows Server</option>
+        <option value="Workfield">Goed in Workfield</option>
+        <option value="Frans">Goed in Frans</option>
+        <option value="Engels">Goed in Engels</option>
+        <option value="Nederlands">Goed in Nederlands</option>
+      </select><br>
+      <div class="flex-container">
+        <div class="card" id="openModal1">
+          <div class="upperPart"><img src="../images/profielfoto9.png" class="profielfoto">
+            <h3>Maxime Van Steenland</h3>
+          </div>
+          <div class="badgePart"><img src="../images/badge.png" class="badge"><span>3 Badges verdiend</span></div>
+          <div class="githubPart"><img src="../images/github.png" class="github"><span>MaximeVS165</span></div>
+          <div class="pointsPart"><img src="../images/Book.png" class="points"><span>1ste Bachelor / Groep 1-2</span>
+          </div>
+        </div>
+        <div class="card" id="openModal1">
+          <div class="upperPart"><img src="../images/profielfoto2.png" class="profielfoto">
+            <h3>David De Coster</h3>
+          </div>
+          <div class="badgePart"><img src="../images/badge.png" class="badge"><span>8 Badges verdiend</span></div>
+          <div class="githubPart"><img src="../images/github.png" class="github"><span>DavidDC798</span></div>
+          <div class="pointsPart"><img src="../images/Book.png" class="points"><span>1ste Bachelor / Groep 5-6</span>
+          </div>
+        </div>
+        <div class="card" id="openModal1">
+          <div class="upperPart"><img src="../images/profielfoto3.png" class="profielfoto">
+            <h3>Aurelie Bogearts</h3>
+          </div>
+          <div class="badgePart"><img src="../images/badge.png" class="badge"><span>6 Badges verdiend</span></div>
+          <div class="githubPart"><img src="../images/github.png" class="github"><span>AureliaBogaerts2</span></div>
+          <div class="pointsPart"><img src="../images/Book.png" class="points"><span>1ste Bachelor / Groep 1-2</span>
+          </div>
+        </div>
+        <div class="card" id="openModal1">
+          <div class="upperPart"><img src="../images/profielfoto4.png" class="profielfoto">
+            <h3>Thomas Raes</h3>
+          </div>
+          <div class="badgePart"><img src="../images/badge.png" class="badge"><span>2 Badges verdiend</span></div>
+          <div class="githubPart"><img src="../images/github.png" class="github"><span>ThomasRaes</span></div>
+          <div class="pointsPart"><img src="../images/Book.png" class="points"><span>2de Bachelor / Groep 2</span></div>
+        </div>
+        <div class="card" id="openModal1">
+          <div class="upperPart"><img src="../images/profielfoto5.png" class="profielfoto">
+            <h3>Pieter Panneaerts</h3>
+          </div>
+          <div class="badgePart"><img src="../images/badge.png" class="badge"><span>11 Badges verdiend</span></div>
+          <div class="githubPart"><img src="../images/github.png" class="github"><span>PeterPannetje</span></div>
+          <div class="pointsPart"><img src="../images/Book.png" class="points"><span>2de bachelor / Groep 1</span></div>
+        </div>
+        <div class="card" id="openModal1">
+          <div class="upperPart"><img src="../images/profielfoto6.png" class="profielfoto">
+            <h3>Jessica Vermeersens</h3>
+          </div>
+          <div class="badgePart"><img src="../images/badge.png" class="badge"><span>5 Badges verdiend</span></div>
+          <div class="githubPart"><img src="../images/github.png" class="github"><span>JessicaHere</span></div>
+          <div class="pointsPart"><img src="../images/Book.png" class="points"><span>1ste Bachelor / Groep 3-4</span>
+          </div>
+        </div>
+        <div class="card" id="openModal1">
+          <div class="upperPart"><img src="../images/profielfoto7.png" class="profielfoto">
+            <h3>Jessy Brown</h3>
+          </div>
+          <div class="badgePart"><img src="../images/badge.png" class="badge"><span>8 Badges verdiend</span></div>
+          <div class="githubPart"><img src="../images/github.png" class="github"><span>MrBrownCodes</span></div>
+          <div class="pointsPart"><img src="../images/Book.png" class="points"><span>1ste Bachelor / Groep 3-4</span>
+          </div>
+        </div>
+        <div class="card" id="openModal1">
+          <div class="upperPart"><img src="../images/profielfoto8.png" class="profielfoto">
+            <h3>Melanie De Ster</h3>
+          </div>
+          <div class="badgePart"><img src="../images/badge.png" class="badge"><span>15 Badges verdiend</span></div>
+          <div class="githubPart"><img src="../images/github.png" class="github"><span>MelSter5</span></div>
+          <div class="pointsPart"><img src="../images/Book.png" class="points"><span>1ste Bachelor / Groep 1-2</span>
+          </div>
+        </div>
+      </div>
+      <h2>Mijn Docenten</h2>
+      <div class="flex-container">
+        <div class="card" id="openModal1">
+          <div class="upperPart"><img src="../images/profielfoto4.png" class="profielfoto">
+            <h3>Wouter De Haemer</h3>
+          </div>
+          <div class="badgePart"><img src="../images/badge.png" class="badge"><span>2 Badges verdiend</span></div>
+          <div class="githubPart"><img src="../images/github.png" class="github"><span>WouterDHmr</span></div>
+          <div class="pointsPart"><img src="../images/punten.png" class="points"><span>Web Development</span></div>
+        </div>
+        <div class="card" id="openModal1">
+          <div class="upperPart"><img src="../images/profielfoto9.png" class="profielfoto">
+            <h3>Rob Covaerts</h3>
+          </div>
+          <div class="badgePart"><img src="../images/badge.png" class="badge"><span>5 Badges verdiend</span></div>
+          <div class="githubPart"><img src="../images/github.png" class="github"><span>RobCov</span></div>
+          <div class="pointsPart"><img src="../images/punten.png" class="points"><span>Database Development</span></div>
+        </div>
+        <div class="card" id="openModal1">
+          <div class="upperPart"><img src="../images/profielfoto2.png" class="profielfoto">
+            <h3>Bert van Groningen</h3>
+          </div>
+          <div class="badgePart"><img src="../images/badge.png" class="badge"><span>4 Badges verdiend</span></div>
+          <div class="githubPart"><img src="../images/github.png" class="github"><span>Bert824</span></div>
+          <div class="pointsPart"><img src="../images/punten.png" class="points"><span>Advanced Networks</span></div>
+        </div>
+        <div class="card" id="openModal1">
+          <div class="upperPart"><img src="../images/profielfoto6.png" class="profielfoto">
+            <h3>Silke Dujardin</h3>
+          </div>
+          <div class="badgePart"><img src="../images/badge.png" class="badge"><span>1 Badge verdiend</span></div>
+          <div class="githubPart"><img src="../images/github.png" class="github"><span>SilkeDuJardin</span></div>
+          <div class="pointsPart"><img src="../images/punten.png" class="points"><span>Project Mangement</span></div>
+        </div>
+        <div class="card" id="openModal1">
+          <div class="upperPart"><img src="../images/profielfoto8.png" class="profielfoto">
+            <h3>Emily Kite</h3>
+          </div>
+          <div class="badgePart"><img src="../images/badge.png" class="badge"><span>3 Badges verdiend</span></div>
+          <div class="githubPart"><img src="../images/github.png" class="github"><span>EmilyPrograms</span></div>
+          <div class="pointsPart"><img src="../images/punten.png" class="points"><span>Application Development</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Modal1" class="modal1">
+      <div class="modal-content1">
+        <div class="modal-header">
+          <span class="close1">&times;</span>
+          <img src="../images/profielfoto9.png" class="modalPic">
+          <h2>Maxime van Steenland</h2>
+          <a href="mailto:maxime.van.steenland@odisee.student.be"><small
+              id="mail">maxime.van.steenland@student.odisee.be</small></a><br>
+          <a href="https://www.github.com"><small>Github: MaximeVS165</small></a>
+          <p></p>
+        </div>
+        <div class="modal-body">
+          <h3>Karakter profiel</h3>
+          <div class="karakterProfiel">
+            <table>
+              <tr>
+                <th>&#160;Als individu</th>
+                <th>&#160;Teamrol</th>
+              </tr>
+              <tr>
+                <td>&#9830; Vriendelijkheid</td>
+                <td rowspan="6"><img src="../images/DeMonitor.png" width="180px" class="groepsrol"></td>
+              </tr>
+              <tr>
+                <td>&#9830; Volharding</td>
+              </tr>
+              <tr>
+                <td>&#9830; Humor</td>
+              </tr>
+              <tr>
+                <td>&#9830; Nieuwsgierigheid</td>
+              </tr>
+              <tr>
+                <td>&#9830; Leiderschap</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <h3>Badges</h3>
+          <img src="../images/Badges.png" class="modalBadges">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/7c12ba35a1.js" crossorigin="anonymous"></script>
+  <script src="/__/firebase/7.14.2/firebase-app.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-auth.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-database.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-storage.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="../js/index.js"></script>
+  <script src="../js/community.js"></script>
+</body>
+
+</html>

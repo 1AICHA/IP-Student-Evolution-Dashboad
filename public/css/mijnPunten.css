@@ -1,0 +1,294 @@
+/* Dit is de css file voor het MijnPunten subonderdeel in de SED. */
+
+/* General */
+.card-container {
+    background-color: white;
+    border: 2px solid #2C3E50;
+    border-radius: 5px;
+}
+
+h2 {
+    margin-bottom: 0px;
+}
+
+/* Tabbed Styles */
+.tabbed {
+    width: 100%;
+    /* max-width: 400px; */
+    margin: 0 auto;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    transition: border 250ms ease;
+}
+
+.tabbed ul {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    float: left;
+    padding-left: 36px;
+    list-style-type: none;
+    transform: scale(1);
+}
+
+.tabbed ul * {
+    margin: 0px;
+    padding: 0px;
+}
+
+.tabbed ul li {
+    display: block;
+    float: right;
+    padding: 10px 24px 8px;
+    background-color: #FFF;
+    margin-right: 46px;
+    z-index: 2;
+    position: relative;
+    cursor: pointer;
+    color: #777;
+
+    text-transform: uppercase;
+    font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+
+    transition: all 250ms ease;
+}
+
+.tabbed ul li:before,
+.tabbed ul li:after {
+    display: block;
+    content: " ";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 44px; 	
+    background-color: #FFF;
+    transition: all 250ms ease;
+}
+
+.tabbed ul li:before {
+    right: -24px;
+    transform: skew(30deg, 0deg);
+    box-shadow: rgba(0,0,0,.1) 3px 2px 5px, inset rgba(255,255,255,.09) -1px 0;
+}
+
+.tabbed ul li:after {
+    left: -24px;
+    transform: skew(-30deg, 0deg);
+    box-shadow: rgba(0,0,0,.1) -3px 2px 5px, inset rgba(255,255,255,.09) 1px 0;
+}
+
+.tabbed ul li:hover,
+.tabbed ul li:hover:before,
+.tabbed ul li:hover:after {
+    background-color: #F4F7F9;
+    color: #444;
+}
+
+.tabbed ul li.active {
+    z-index: 3;
+}
+
+.tabbed ul li.active,
+.tabbed ul li.active:before,
+.tabbed ul li.active:after {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Rounded */
+.tabbed.round ul li {
+    border-radius: 8px 8px 0 0;
+}
+
+.tabbed.round ul li:before {
+    border-radius: 0 8px 0 0;
+}
+
+.tabbed.round ul li:after {
+    border-radius: 8px 0 0 0;
+}
+
+/* Color */
+.tabbed[class*="skin-"] ul li {
+    color: #FFF;
+    text-shadow: rgba(0,0,0,.1) 0 1px;
+}
+
+.tabbed.skin-midnight-blue {
+    border-bottom-color: #2C3E50;
+}
+.tabbed.skin-midnight-blue ul li,
+.tabbed.skin-midnight-blue ul li:before,
+.tabbed.skin-midnight-blue ul li:after {
+    background-color: #46586A;
+}
+.tabbed.skin-midnight-blue ul li:hover,
+.tabbed.skin-midnight-blue ul li:hover:before,
+.tabbed.skin-midnight-blue ul li:hover:after {
+    background-color: #526476;
+}
+.tabbed.skin-midnight-blue ul li.active,
+.tabbed.skin-midnight-blue ul li.active:before,
+.tabbed.skin-midnight-blue ul li.active:after {
+    background-color: #2C3E50;
+}
+
+/* Tabcontent */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 2px solid #2C3E50;
+    border-top: 4px solid #2C3E50;
+    background-color: white;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.tabcontent h2 {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.successcontent {
+    display: none;
+}
+
+.cards {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.card {
+    width: 175px;
+    border: 1px solid #2C3E50;
+    border-radius: 8px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.card h3, p {
+    margin: 10px;
+}
+
+.card p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.student-grade {
+    margin-right: 0px;
+    display: inline;
+}
+
+.student-grade-total {
+    margin-left: 0px;
+    display: inline;
+}
+
+.grade-bad {
+    color: #c80000;
+}
+
+.grade-mediocre {
+    color: #ff7d00;
+}
+
+.grade-good {
+    color: #00c800;
+}
+
+/* Prognosis table */
+.prognosis-table {
+    margin: 10px;
+}
+
+.prognosis-table table, th, td {
+    border: 1px solid #2c3e50;
+    border-collapse: collapse;
+}
+
+.prognosis-table th, td {
+    padding: 5px;
+}
+
+.prognosis-table th {
+    text-align: left;
+}
+
+.prognosis-input {
+    font-family: 'Noto Sans SC';
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+    width: 30px;
+    left: 35%;
+}
+
+.tablecontent {
+    display: none;
+}
+
+/* Graphs */
+
+.graphcontent, .prognosisChartContent {
+    user-select: none; /* For Chrome and Opera */
+    -ms-user-select: none; /* For Internet Edge and Explorer*/
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -khtml-user-select: none; /* Konqueror HTML */
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1250px) {
+    .tabbed ul {
+        transform: scale(0.8);
+        margin-left: -100px;
+        margin-bottom: -4px;
+    }
+}
+@media only screen and (max-width: 1150px) {
+    .tabbed ul {
+        transform: scale(0.8);
+        margin-left: -100px;
+        margin-bottom: -4px;
+        min-width: 1005px;
+    }
+}
+
+@media only screen and (max-width: 1040px) {
+    .tabbed ul {
+        transform: scale(0.6);
+        margin-left: -208px;
+        margin-bottom: -8px;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    .tabbed ul {
+        transform: scale(0.5);
+        margin-left: -260px;
+        margin-bottom: -10px;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    .tabbed ul {
+        transform: scale(0.5);
+        margin-left: -446px;
+        margin-bottom: -10px;
+    }
+
+    .tabbed ul li {
+        padding: 10px 5px 8px;
+        margin-right: 0px;
+    }
+
+    .tabbed ul li:before,
+    .tabbed ul li:after {
+        display: none;
+    }    
+}

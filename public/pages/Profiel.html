@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Evolution Dashboard</title>
+  
+  <link rel="icon" href="data:;base64,=">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/Profiel.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <span>SED</span>
+      </li>
+      <li class="nav-item">
+        <a href="../index.html" class="nav-link">
+          <i class="fas fa-home fa-2x"></i>
+          <span class="link-text">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./mijnPunten.html" class="nav-link">
+          <i class="fas fa-chart-area fa-2x"></i>
+          <span class="link-text">Mijn Punten</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./puntenVergelijken.html" class="nav-link">
+          <i class="fas fa-arrows-alt-h fa-2x"></i>
+          <span class="link-text">Vergelijk</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./forums.html" class="nav-link">
+          <i class="fas fa-comments fa-2x"></i>
+          <span class="link-text">Forums</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./community.html" class="nav-link">
+          <i class="fas fa-user-friends fa-2x"></i>
+          <span class="link-text">Community</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./Profiel.html" class="nav-link">
+          <i class="fas fa-user-circle fa-2x"></i>
+          <span class="link-text">Profiel</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./instellingen.html" class="nav-link">
+          <i class="fas fa-cog fa-2x"></i>
+          <span class="link-text">Instellingen</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div id="topbarID" class="topbar">
+    <ul class="topbar-bar">
+      <li class="topbar-item">
+        <span id="uName" class="topbar-text"></span>
+      </li>
+      <li class="topbar-item">
+        <button id="loginModalButton" class="generalButton">LOGIN</button>
+        <button id="logoutModalButton" class="generalButton hidden">LOGOUT</button>
+      </li>
+    </ul>
+  </div>
+  <main>
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <div class="close">+</div>
+        <label for="email"><b>E-mail Address</b></label>
+        <input id="email" type="text" class="inputForm" placeholder="Enter E-mail" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input id="pass" type="password" class="inputForm" placeholder="Enter Password" name="psw" required>
+
+        <button id="login" type="submit" class="generalButton">LOGIN</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1 id="">Mijn profiel</h1>
+
+      <div id="" class="div_Een">
+        <h2>Mijn visitekaartje</h2>
+        <div class="div_EenInhoud">
+          <div class="div_EenInhoud_links">
+            <img src="../images/profielfoto.png" alt="Profielfoto van student" class="profiel_foto">
+            <p id="nameFinaal">Tom Peeters</p>
+            <i class="fab fa-github" id="favIcon"></i>
+            <span id="githubFinaal"></i>1Tom</span>
+          </div>
+          <div class="div_EenInhoud_midden">
+            <label>Karakterprofiel</label>
+            <div class="div_inh_mid_karakterProf">
+              <div class="div_EenInhoud_midden_karakterprofiel">
+                <p>Ik als individu</p>
+                <p id="GekozenIndividu"></p>
+              </div>
+              <div class="div_EenInhoud_midden_teamroltype">
+                <p>Ik als teamrol type</p>
+                <p id="teamroltypePFKaart"></p>
+              </div>
+            </div>
+          </div>
+          <div class="div_EenInhoud_rechts">
+            <label>Badges</label>
+            <p>6</p>
+
+          </div>
+        </div>
+        <button id="wijzigProfielKaart">Wijzig</button>
+      </div>
+      <!-- Wijzig profielinfo(onzichtbaar tot onclick "wijzig profiel" btn)-->
+      <div id="wijzig_Profiel" class="hidden">
+        <div class="wijzig_Profiel_Inhoud">
+          <form id="wijzigenProfielForm" action="">
+            <label for="img">Profiel foto</label>
+            <input id="button_kiesfoto" type="file" id="img" name="img" accept="image/*" value="Foto kiezen">
+
+            <p>
+              <label for="vnaam">Voornaam*</label>
+            </p>
+            <p>
+              <input id="vnaam" required value="Tom Peeters"></input>
+            </p>
+            <p>
+              <label for="e-mail">E-mail</label>
+            </p>
+            <p>
+              <input type="e-mail" id="e-mail" required value="Tom.Peeters@student.odisee.be">
+            </p>
+            <p>
+              <label for="e-mail">Gebruikersnaam</label>
+            </p>
+            <p>
+              <input type="text" id="gebruikersnaam" value="TomPeeters">
+            </p>
+
+            <p>Welke naam zien anderen?</p>
+            <div class="radioBtn">
+              <div class="radioBtn1">
+                <span><input type="radio" id="naamTonen" value="Naam" checked>
+                  <label for="naamTonen">Naam</label><br></span>
+              </div>
+              <div class="radioBtn2">
+                <span></span><input type="radio" id="gebruikersnaamTonen" value="Gebruikersnaam">
+                <label for="gebruikersnaamTonen">Gebruikersnaam</label><br></span>
+              </div>
+            </div>
+
+            <p>
+              <label for="text">Github</label>
+            </p>
+            <p>
+              <input type="text" id="github" value="1Tom">
+            </p>
+            <p>
+              <label for="text">Website</label>
+            </p>
+            <p>
+              <input type="text" id="website">
+            </p>
+            <button id="sluitenWijzigProfielDiv">Profielswijzigingen opslaan</button>
+            <button id="AnuleerWijzigProfielDiv">Annuleer</button>
+          </form>
+        </div>
+      </div>
+
+
+      <div id="" class="div_Twee">
+        <div class="div2Top">
+          <h2>Mijn badges</h2>
+          <select name="groepsfilter" id="Badgefilter">
+            <option value="ongefilterd">Ongefilterd</option>
+            <option value="groep1-2">Badges ivm profiel</option>
+            <option value="groep3-4">Sociale badges</option>
+            <option value="groep5-6">Badges ivm zelfontplooiing</option>
+            <option value="groep5-6">Badges ivm punten</option>
+          </select><br>
+        </div>
+        <div class="picture_grid">
+          <div class="grid_box"><img src="../images/StelProFotIn.png" alt="Badge profielfoto" />
+            <p>Profielfoto</p><span class="tooltiptext">Je hebt je profielfoto ingesteld en de badge verdient</span>
+          </div>
+          <div class="grid_box"><img src="../images/HelperAntw.png" alt="Badge Helper" />
+            <p>Helper</p><span class="tooltiptext">Badge verdient als helper voor medestudenten</span>
+          </div>
+          <div class="grid_box"><img src="../images/LeerOverJezelfTeam.png" alt="Badge zelfkennis" />
+            <p>Zelfkennis</p><span class="tooltiptext">Testjes over jezelf uitgevoerd</span>
+          </div>
+          <div class="grid_box"><img src="../images/ShareProjecten.png" alt="Badge share" />
+            <p>Share</p><span class="tooltiptext">Je hebt een zelfgemaakt project gedeeld</span>
+          </div>
+          <div class="grid_box"><img src="../images/DurfTeVragen.png" alt="Badge durf vragen" />
+            <p>Durf vragen</p><span class="tooltiptext">Je hebt badge verdient door een vraag te durven stellen</span>
+          </div>
+          <div class="grid_box"><img src="../images/Voeg5vriendenAanPuntenToe.png" alt="Badge deel punten" />
+            <p>Deel punten</p><span class="tooltiptext">Je hebt je punten met 5 medestudenten gedeeld</span>
+          </div>
+          <div id="nogniet1" class="grid_box"><img src="../images/HelperAntw10X.png" alt="Badge 10x helper" />
+            <p>10x helper</p><span class="tooltiptext">Je hebt 10x iemand geholpen</span>
+          </div>
+          <div id="nogniet2" class="grid_box"><img src="../images/BovenKlasGem.png" alt="Badge bovengemiddeld" />
+            <p>Bovengemiddeld</p><span class="tooltiptext">Je scoorde hoger dan het klasgemiddelde</span>
+          </div>
+          <div id="nogniet3" class="grid_box"><img src="../images/VijftienPlus.png" alt="Badge 15+ score" />
+            <p>15+</p><span class="tooltiptext">Je eerste 15+ op 20 behaald, proficiat</span>
+          </div>
+          <div id="nogniet4" class="grid_box"><img src="../images/ZelfkennisPrognosePunt.png"
+              alt="Badge goede prognose" />
+            <p>Prognosekoning</p><span class="tooltiptext">Je hebt een goede prognose over je kennis gemaakt!</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="" class="div_Drie">
+        <h2>Ik als persoon</h2>
+        <p> De 24 karaktersterktes test van via
+          Met behulp van de Via Charachter test, ontdek je je karakterprofiel.
+          Iedereen bezit alle 24 karaktersterktes in verschillende graden, dus elke persoon heeft een echt uniek
+          karakterprofiel. De 24 geïdentificeerde karaktersterktes zijn universeel tussen culteren en naties.
+          Wil je hierover meer lezen? Kijk op https://www.viacharacter.org/character-strengths</p>
+
+        <p>
+          Waarom is het belangrijk om je karakterssterktes te ontdekken? </br>
+          De sterke punten van je karakter zijn de kwaliteiten die het meest natuurlijk voor je zijn. Als je je sterke
+          punten kent, kun je je leven verbeteren en gedijen.
+          Uit onderzoek blijkt dat mensen die veel gebruik maken van hun sterke punten 18x meer kans hebben om te
+          floreren dan mensen die hun sterke punten niet gebruiken.
+        </p>
+        <h3>Ontdek je karaktersterktes</h3>
+        <p>1) Vul de test in</p>
+        <p> a) Surf naar https://www.viacharacter.org</p>
+        <p> b) maak de test</p>
+        <p> 2) Selecteer je top 5 karaktersterktes </p>
+
+
+        <div>
+          <div class="grid-sterktes">
+
+            <div class="sterkte" data-sterktetype="Waarderen van Beauty & Excellency">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/appreciation-of-beauty.png">
+                  <p>Waarderen van Beauty & Excellency</p>
+                  <p>Ik herken, ervaar en waardeer de schoonheid om me heen en de vaardigheid van anderen.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Moed">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/bravery.png">
+                  <p>Moed</p>
+                  <p>Ik handel naar mijn overtuiging en ik word geconfronteerd met bedreigingen, uitdagingen,
+                    moeilijkheden en pijnen, ondanks mijn twijfels en angsten.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Creativiteit">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/creativity.png">
+                  <p>Creativiteit</p>
+                  <p>
+                    Ik ben creatief, bedenk iets nuttigs en bedenk ideeën die resulteren in iets dat de moeite waard is.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Nieuwsgierigheid">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/curiosity.png">
+                  <p>Nieuwsgierigheid</p>
+                  <p>
+                    Ik zoek situaties op waarin ik nieuwe ervaringen opdoet zonder mezelf of anderen in de weg te staan.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Eerlijkheid">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/fairness.png">
+                  <p>Eerlijkheid</p>
+                  <p>
+                    Ik behandel iedereen gelijk en eerlijk en geef iedereen dezelfde kans om dezelfde regels op iedereen
+                    toe te passen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Vergiffenis">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/forgiveness.png">
+                  <p>Vergiffenis</p>
+                  <p>
+                    Ik vergeef anderen wanneer ze me van streek maken en / of wanneer ze zich slecht gedragen tegenover
+                    mij,
+                    en ik gebruik die informatie in mijn toekomstige relaties met hen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Dankbaarheid">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/gratitude.png">
+                  <p>Dankbaarheid</p>
+                  <p>
+                    Ik ben voor veel dingen dankbaar en ik spreek die dankbaarheid uit aan anderen
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Oprecht">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/honesty.png">
+                  <p>Oprecht</p>
+                  <p>
+                    Ik ben eerlijk tegen mezelf en tegen anderen, ik probeer mezelf en mijn reacties
+                    nauwkeurig voor te stellen aan elke persoon, en ik neem de verantwoordelijkheid voor mijn acties.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Hoop">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/hope.png">
+                  <p>Hoop</p>
+                  <p>
+                    Ik ben realistisch en ook vol optimisme over de toekomst,
+                    geloof in mijn acties en heb er vertrouwen in dat het goed zal komen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Nederigheid">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/humility.png">
+                  <p>Nederigheid</p>
+                  <p>Ik zie mijn sterke punten en talenten,
+                    maar ik ben bescheiden en probeer niet het middelpunt van de aandacht te zijn of erkenning te
+                    krijgen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Humor">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/humor.png">
+                  <p>Humor</p>
+                  <p>
+                    Ik benader het leven speels, maak anderen aan het lachen en vind humor in moeilijke en stressvolle
+                    tijden.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Oordeel">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/judgment.png">
+                  <p>Oordeel</p>
+                  <p>
+                    Ik weeg alle aspecten objectief af bij het nemen van beslissingen,
+                    inclusief argumenten die in strijd zijn met mijn overtuiging.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Vriendelijkheid">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/kindness.png">
+                  <p>Vriendelijkheid</p>
+                  <p>
+                    Ik ben behulpzaam en empathisch en doe regelmatig leuke gunsten voor anderen zonder iets terug te
+                    verwachten.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Leiderschap">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/leadership.png">
+                  <p>Leiderschap</p>
+                  <p>
+                    Ik neem de leiding en begeleid groepen naar zinvolle doelen en zorg voor goede relaties tussen
+                    groepsleden.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Liefde">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/love.png">
+                  <p>Liefde</p>
+                  <p>
+                    Ik ervaar hechte, liefdevolle relaties die worden gekenmerkt door het geven en ontvangen van liefde,
+                    warmte en zorgzaamheid.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Liefde voor leren">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/love-of-learning.png">
+                  <p>Liefde voor leren</p>
+                  <p>
+                    Ik ben gemotiveerd om nieuwe kennisniveaus te verwerven of mijn
+                    bestaande kennis of vaardigheden op een significante manier te verdiepen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Volharding">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/perseverance.png">
+                  <p>Volharding</p>
+                  <p>
+                    Ondanks obstakels, ontmoedigingen of teleurstellingen blijf ik mijn doelen nastreven.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Perspectief">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/perspective.png">
+                  <p>Perspectief</p>
+                  <p>Ik geef advies aan anderen door verschillende (en relevante) perspectieven
+                    te overwegen en mijn eigen ervaringen en kennis te gebruiken om het grote geheel te verduidelijken.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Voorzichtigheid">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/prudence.png">
+                  <p>Voorzichtigheid</p>
+                  <p>
+                    Ik handel zorgvuldig en voorzichtig,
+                    probeer onnodige risico's te vermijden en plan met het oog op de toekomst.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Zelfregulering">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/self-regulation.png">
+                  <p>Zelfregulering</p>
+                  <p>
+                    Ik beheer mijn gevoelens en acties en ben gedisciplineerd en zelfbeheersend.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Sociale intelligentie">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/social-intelligence.png">
+                  <p>Sociale intelligentie</p>
+                  <p>
+                    Ik ben me bewust van en begrijp mijn gevoelens en gedachten,
+                    evenals de gevoelens van de mensen om me heen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Spiritualiteit">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/spirituality.png">
+                  <p>Spiritualiteit</p>
+                  <p>
+                    Ik voel me spiritueel en geloof in een gevoel van doel of zin in mijn leven;
+                    en ik zie mijn plaats in het grote geheel van het universum en vind betekenis in het dagelijks
+                    leven.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Teamwork">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/teamwork.png">
+                  <p>Teamwork</p>
+                  <p>
+                    Ik ben een behulpzame en bijdragende groep en teamlid
+                    en voel me verantwoordelijk om het team te helpen zijn doelen te bereiken.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sterkte" data-sterktetype="Zest">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/zest.png">
+                  <p>Zest</p>
+                  <p>
+                    Ik voel me vitaal en vol energie, ik benader het leven met een geactiveerd en enthousiast gevoel
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <p>je hebt de volgende 5 karaktersterktes geselecteerd</p>
+        <div id="jeKarakterSterktes" class="txt" contenteditable></div>
+        <!--<input type="text" id="jeKarakterSterktes" class='txt'>-->
+
+        <button id="bewaarKaraktersterktes">Bewaar</button>
+      </div>
+
+
+
+
+
+      <div id="teamrollen" class="div_Vier">
+        <h2>Ik als teamplayer</h2>
+        <p>
+          Waarom is het belangrijk om te weten welke rol je binnen een team speelt?
+          Een team dat alleen uit creativelingen bestaat gaat weinig resultaat boeken.
+          Omgekeerd zal een team dat alleen maar uit 'uitvoerders' bestaan,
+          heel veel werk verrichten maar zonder waardevol resultaat.
+          Een ideale team bestaat uit teamleden met verschillende teamrollen.
+          Via de test, kan je, vanuit je persoonlijkheid, bepalen welke teamrol bij je past.</p>
+        <h3>Ontdek je teamrol</h3>
+        <p>1) Vul de test in</p>
+        <p>a) Surf naar https://www.123test.nl/groepsrollentest </p>
+        <p>b) maak de test</p>
+        <p>2) Selecteer de teamrol die bij jou past</p>
+
+        <div class="grid-teamrollen">
+
+          <div class="teamroltype" data-teamroltype="Plant">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/Plant.png">
+                <p>Plant</p>
+                <p>Creatief, verbeeldingsrijk en onorthodox. Brengt vissie en nieuwe zienswijzen.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="teamroltype" data-teamroltype="Brononderzoeker">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/bron-onderzoeker.png">
+                <p>Brononderzoeker</p>
+                <p>Extravert, enthousiast en vaardig in de communicatie. Verkent mogelijkheden en legt contacten.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="teamroltype" data-teamroltype="Coördinator">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/coördinator.png">
+                <p>Coördinator</p>
+                <p>Brengt mensen bijeen en coördineert de inspanningen van het team. Opzoek naar gezamelijk besluit.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="teamroltype" data-teamroltype="Monitor">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/monitor.png">
+                <p>Monitor</p>
+                <p>Verstandig, doordacht en rationeel. Bewaart het overzicht en weegt alle mogelijkheden af.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="teamroltype" data-teamroltype="Zorgdrager">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/zorgdrager.png">
+                <p>Zorgdrager</p>
+                <p>Nauwgezet en precies. Zorgzaam en nauwgezet t.o.v. wat fout kan gaan. Zet de puntjes op de i.</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="teamroltype" data-teamroltype="Organisator">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/organisator.png">
+                <p>Organisator</p>
+                <p>Taakgericht, nuchter en ordelijk. Zet plannen en ideeën om in praktische taken en bezigheden.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="teamroltype" data-teamroltype="Groepswerker">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/groepswerker.png">
+                <p>Groepswerker</p>
+                <p>Opmerkzaam, behulpzaam en diplomatiek. Luistert en ondersteunt. De sfeermaker.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="teamroltype" data-teamroltype="Vormer">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/vormer.png">
+                <p>Vormer</p>
+                <p>Dynamisch, gedreven en uitdagend. Zet druk op het team en ruimt weerstanden uit de weg.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="teamroltype" data-teamroltype="Specialist">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/specialist.png">
+                <p>Specialist</p>
+                <p>Toegewijde, soms wat eenzelvige vakman die bijzondere en of zeldzame kennis en vaardigheden brengt.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <p>je hebt de volgende teamrol geselecteerd</p>
+        <input type="text" id="jeUniekeTeamRol" class='txt'>
+        <button id="bewaarBtntTeamrol">Bewaar</button>
+
+      </div>
+
+    </div>
+
+  </main>
+  <script src="https://kit.fontawesome.com/7c12ba35a1.js" crossorigin="anonymous"></script>
+  <script src="/__/firebase/7.14.2/firebase-app.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-auth.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-database.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-storage.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="../js/index.js"></script>
+  <script src="../js/Profiel.js"></script>
+</body>
+
+</html>

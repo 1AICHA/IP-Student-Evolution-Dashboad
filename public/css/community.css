@@ -1,0 +1,256 @@
+/* Community */
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+	background-color: #E8E8E8;
+	width: 280px;
+	min-width: 280px;
+  	height: 218px;
+    border: 2px solid;
+    border-radius: 5px;
+    margin-right: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.card:hover {
+	background-color: #e0e0ff;
+}
+
+h2{
+	color: #5c5ccc;
+}
+
+.profielfoto {
+	float: left;
+	height: 80px;
+	width: 80px;
+	margin-left: 8px;
+
+	margin-right: 10px;
+}
+
+.badgePart{
+	margin-left: 3px;
+	margin-top: 13px;
+}
+
+.badge {
+	float: left;
+	height: 30px;
+	width: 30px;
+	margin-left: 10px;
+	margin-right: 6px;
+}
+
+.github {
+	float: left;
+	height: 30px;
+	width: 30px;
+	margin-left: 10px;
+	margin-right: 6px;
+}
+
+.githubPart{
+	margin-left: 3px;
+	margin-top: 12px;
+}
+
+.points {
+	float: left;
+	height: 30px;
+	width: 30px;
+	margin-left: 10px;
+	margin-right: 6px;
+}
+
+.pointsPart {
+	margin-left: 3px;
+	margin-top: 13px;
+	margin-bottom: 4px;
+}
+
+.upperPart {
+
+	border-color: #E8E8E8;
+	height: 88px;
+}
+
+.upperPart h3 {
+	margin-top: 10px;
+}
+
+/*/// modal ///*/
+
+.modal1 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  overflow: auto;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  z-index: 10000;
+  animation-name: fadeIn;
+  animation-duration: 0.5s; 
+}
+
+.modal-content1 {
+  position: relative;
+  padding: 0px;
+  background-color: #fefefe;
+  width: 40rem;
+  margin: auto;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+.close1 {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+	background-color: #E8E8E8;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+
+.modal-body {
+	background-color: white;
+    padding-bottom: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.modal-footer {
+    background-color: lightgrey;
+    color: white;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+}
+
+.modalPic {
+	height: 50px;
+	width: 50px;
+	padding-top: 5px;
+	
+}
+
+.modalBadges {
+	border-radius: 2%;
+	width: 20rem;
+	height: auto;
+}
+
+small {
+	color: #cc96eb;
+}
+
+table {
+	width: 100%;
+	padding-bottom: 10px;
+	border-collapse: collapse;
+}
+
+.karakterProfiel {
+	justify-content: flex-start;
+	text-align: left;
+	width: 100%;
+	padding-bottom: 5px;
+}
+
+a {
+	text-decoration: none;
+}
+
+#mail {
+	color: #aa63f7;
+}
+
+tbody {
+	justify-content: flex-start;
+	text-align: left;
+	width: 100%;
+}
+
+th {
+	margin-bottom: 3px;
+	border-bottom: solid black 1px; 
+	border-right: solid black 1px; 
+}
+
+tr { 
+	border: none; 
+}
+
+td {
+  border-right: solid black 1px; 
+  font-style: italic;
+  font-size: 14px;
+}
+
+.karakterProfiel{
+	justify-content: center;
+	text-align: center;
+	width: 580px;
+	margin-left:auto;
+	margin-right:auto;
+	border: solid 2px;
+	border-radius: 2%;
+}
+
+.groepsrol {
+	width: 70px;
+	height: 40px;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {top: -300px; opacity: 0} 
+  to {top: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}

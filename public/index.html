@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Evolution Dashboard</title>
+
+  <link rel="icon" href="data:;base64,=">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <span>SED</span>
+      </li>
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">
+          <i class="fas fa-home fa-2x"></i>
+          <span class="link-text">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./pages/mijnPunten.html" class="nav-link">
+          <i class="fas fa-chart-area fa-2x"></i>
+          <span class="link-text">Mijn Punten</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./pages/puntenVergelijken.html" class="nav-link">
+          <i class="fas fa-arrows-alt-h fa-2x"></i>
+          <span class="link-text">Vergelijk</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./pages/forums.html" class="nav-link">
+          <i class="fas fa-comments fa-2x"></i>
+          <span class="link-text">Forums</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./pages/community.html" class="nav-link">
+          <i class="fas fa-user-friends fa-2x"></i>
+          <span class="link-text">Community</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./pages/Profiel.html" class="nav-link">
+          <i class="fas fa-user-circle fa-2x"></i>
+          <span class="link-text">Profiel</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./pages/instellingen.html" class="nav-link">
+          <i class="fas fa-cog fa-2x"></i>
+          <span class="link-text">Instellingen</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div id="topbarID" class="topbar">
+    <ul class="topbar-bar">
+      <li class="topbar-item">
+        <span id="uName" class="topbar-text"></span>
+      </li>
+      <li class="topbar-item">
+        <button id="loginModalButton" class="generalButton">LOGIN</button>
+        <button id="logoutModalButton" class="generalButton hidden">LOGOUT</button>
+      </li>
+    </ul>
+  </div>
+  <main>
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <div class="close">+</div>
+        <label for="email"><b>E-mail Address</b></label>
+        <input id="email" type="text" class="inputForm" placeholder="Enter E-mail" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input id="pass" type="password" class="inputForm" placeholder="Enter Password" name="psw" required>
+
+        <button id="login" type="submit" class="generalButton">LOGIN</button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="sections">
+        <div class="section">
+          <div class="block1">
+            <h1>Welkom Tom</h1>
+            <h2>Recente resultaten</h2>
+            <ul class="cards">
+              <li class="card">
+                <h3 id="tabNameMI1">M&I: Design thinking</h3>
+                <p class="student-grade grade-bad">9</p>
+                <p class="student-grade-total">/ 20</p>
+              </li>
+              <li class="card">
+                <h3 id="tabNameMI2">M&I: Hackathon</h3>
+                <p class="student-grade grade-good">15</p>
+                <p class="student-grade-total">/ 20</p>
+              </li>
+              <li class="card">
+                <h3 id="tabNameMI3">NL: Gantt Chart</h3>
+                <p class="student-grade grade-good">14</p>
+                <p class="student-grade-total">/ 20</p>
+              </li>
+              <li class="card">
+                <h3 id="tabNameMI3">AWM: Mobile app</h3>
+                <p class="student-grade grade-good">16</p>
+                <p class="student-grade-total">/ 20</p>
+              </li>
+              <li class="card">
+                <h3 id="tabNameMI3">AWM: Documentatie</h3>
+                <p class="student-grade grade-mediocre">13</p>
+                <p class="student-grade-total">/ 20</p>
+              </li>
+              <li class="card">
+                <h3 id="tabNameMI3">AD2: Opdracht 1</h3>
+                <p class="student-grade grade-bad">8</p>
+                <p class="student-grade-total">/ 20</p>
+              </li>
+              <li class="card">
+                <h3 id="tabNameMI3">AD2: Opdracht 2</h3>
+                <p class="student-grade grade-mediocre">13</p>
+                <p class="student-grade-total">/ 20</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="section1">
+          <div class="block2">
+            <h2>Recent verdiende badges</h2>
+            <img src="images/Badges.png" alt="Recente badges">
+          </div>
+          <div class="block2">
+            <h2>Meest recente forum post</h2>
+            <img src="images/Forum.png" alt="Meest recente post in Forums">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/7c12ba35a1.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gridstack@1.1.1/dist/gridstack.all.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-app.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-auth.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-database.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-storage.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

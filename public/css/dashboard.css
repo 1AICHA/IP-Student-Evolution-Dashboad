@@ -1,0 +1,97 @@
+.sections {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.section {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.block1 {
+    width: 100%;
+    background-color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+.section1 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.block2:first-child {
+    margin-right: 2rem;
+}
+
+.block2 {
+    background-color: white;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+    height: 23rem;
+}
+
+.cards {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex;
+    list-style: none;
+    padding-left: 0px;
+    width: 100%;
+    overflow: auto;
+}
+
+.card {
+    width: 220px;
+    border: 1px solid #2C3E50;
+    border-radius: 8px;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-right: 10px;
+}
+
+.card h3, p {
+    margin: 10px;
+}
+
+.card p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.student-grade {
+    margin-right: 0px;
+    display: inline;
+}
+
+.student-grade-total {
+    margin-left: 0px;
+    display: inline;
+}
+
+.grade-bad {
+    color: #c80000;
+}
+
+.grade-mediocre {
+    color: #ff7d00;
+}
+
+.grade-good {
+    color: #00c800;
+}
+
+img {
+    width: 80%;
+}

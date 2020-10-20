@@ -1,0 +1,222 @@
+/* instellingen container */
+.inst-container{
+    width: 400px;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-flex;
+    width: 60px;
+    height: 34px;
+    transform: scale(0.8, 0.8);
+    bottom: 1px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+    width: 70%;
+    display: block;
+    margin: 0.2rem auto;
+    margin-bottom: 0.9rem;
+}
+
+
+#addStudent-input {
+    width: 70%;
+    display: block;
+    margin: 0.2rem auto;
+    margin-bottom: 0.9rem;
+}
+
+.slider {
+    transform: scale(0.8, 0.8);
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+/* Alternate (much better color imo, but whatever): #0035bb */
+input:checked + .slider {
+    background-color: var(--accent-blue);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--accent-blue);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Instellingen items general */
+.inst-list {
+    list-style: none;
+    padding-left: 0px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.inst-list li{
+    margin-bottom: 10px;
+}
+
+.inst-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: center;
+    user-select: none; /* For Chrome and Opera */
+    -ms-user-select: none; /* For Internet Edge and Explorer*/
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -khtml-user-select: none; /* Konqueror HTML */
+}
+
+/* Tooltips */
+.tooltip-item { 
+    display: none;
+}
+
+.tooltip-text {
+    font-size: 13px;
+    margin: 2px;
+}
+
+/* Searchbar */
+.search-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-content: center;
+    align-items: baseline;
+}
+
+#addStudent-input {
+    width: 42%;
+    height: 25px;
+    border: solid 1px var(--accent-blue);
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 4px;
+    margin-left: 0px;
+    margin-right: 0px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#addStudent-input:focus{
+    width: 85%;
+}
+
+#btnAddStudent {
+    background-color: var(--accent-blue);
+    border-radius: 8px;
+    border: solid 1px #2C3E50;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    height: 32px;
+    margin-right: 5px;
+    width: 32px;
+    text-align: center;
+    bottom: 3px;
+    position: relative;
+}
+
+.fa-user-plus {
+    position: relative;
+    top: 3px;
+}
+
+/* Student list */
+.student-list, .subject-list {
+    list-style: none;
+    padding: 0px;
+    height: 175px;
+    width: 390px;
+    overflow: auto;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: -20px;
+}
+
+.student-list-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    margin-left: 8px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.student-name, .subject-name {
+    color: #2C3E50;
+}
+
+.btnRemoveStudent {
+    color: red;
+    cursor: pointer;
+    margin-right: 5px;
+    position: relative;
+    bottom: 1px;
+}
+
+/* Subject list */
+.subject-list-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    margin-top: 5px;
+    user-select: none; /* For Chrome and Opera */
+    -ms-user-select: none; /* For Internet Edge and Explorer*/
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -khtml-user-select: none; /* Konqueror HTML */
+}
+
+#inst-subjectTxt {
+    margin-bottom: 25px;
+    user-select: none; /* For Chrome and Opera */
+    -ms-user-select: none; /* For Internet Edge and Explorer*/
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -khtml-user-select: none; /* Konqueror HTML */
+}
+
+.subject-list-checkbox {
+    margin-top: 6px;
+    margin-right: 8px;
+}
